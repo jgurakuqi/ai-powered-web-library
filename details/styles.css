@@ -1,0 +1,143 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* header {
+    
+    padding: 1em 0;
+} */
+
+header {
+    background-image: url('../library.png');
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 20px;
+    color: white;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.306);
+    border-radius: 8px;
+}
+
+footer {
+    background: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.card {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: justify !important;
+    text-justify: inter-word;
+}
+
+.edit-button {
+    background-color: #f3c221;
+    color: #333;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #ffe02d;
+}
+
+footer .footer span {
+    font-size: 17px;
+}
+
+footer .footer span a {
+    font-weight: 500;
+    color: var(--white-color);
+}
+
+footer .footer span a:hover {
+    text-decoration: underline;
+}
+
+
+/* Back to library button styles in the header */
+
+
+.back-to-library-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.back-to-library-button i {
+    margin-right: 5px;
+}
+
+.back-to-library-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Details layout */
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center !important;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.edit-button {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
