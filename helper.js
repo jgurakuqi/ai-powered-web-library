@@ -1,5 +1,6 @@
 
 export const API_BASE_URL = 'http://192.168.1.177:3000/';
+const DETAIL_PAGE_URL = 'details/index.html'
 
 /**
  * Retrieve the books that matches the given Id, or undefined if not found.
@@ -474,8 +475,8 @@ export function display_retrieved_books(app_context, books) {
             'reviews-button',
             () => open_reviews_modal(app_context, book.id)
         );
-
-        book_item.innerHTML = `<td>${book.Title}</td><td>${book.Author}</td><td>${book.Price}</td><td>${book.Year}</td>`;
+        let complete_url = '<td><a href="' + DETAIL_PAGE_URL + '?bookId=' + book.id + '">';
+        book_item.innerHTML = `${complete_url}${book.Title}</a></td>${complete_url}${book.Author}</a></td><td>${book.Price}</td><td>${book.Year}</td>`;
 
         // Add separate cells for Edit, Delete and Review buttons
         const edit_cell = document.createElement('td');
