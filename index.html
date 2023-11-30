@@ -97,6 +97,7 @@
             <div class="visible">
                 <h2>Edit Book</h2>
                 <form id="edit_book_form">
+
                     <label for="edit_title">Title:</label>
                     <input type="text" id="edit_title" name="edit_title" required><br>
 
@@ -109,6 +110,9 @@
 
                     <label for="edit_year">Year:</label>
                     <input type="number" min="0" max="2023" id="edit_year" name="edit_year" required><br>
+
+                    <input type="number" id="edited_book_id" name="edited_book_id" hidden="true"><br>
+
                     <input type="submit" value="Save Changes" id="edit_book_submit">
                     <!-- class="edit_book_btn" -->
                 </form>

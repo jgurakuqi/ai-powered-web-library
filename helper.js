@@ -23,12 +23,14 @@ function open_edit_modal(book) {
     const edit_author = document.getElementById('edit_author');
     const edit_year = document.getElementById('edit_year');
     const edit_price = document.getElementById('edit_price');
+    const edited_book_id = document.getElementById('edited_book_id');
 
     // Set the current book details in the modal
     edit_title.value = book.Title;
     edit_author.value = book.Author;
     edit_year.value = book.Year;
     edit_price.value = book.Price;
+    edited_book_id.value = book.id;
     // Show the modal
     edit_book_modal.style = 'display: block !important;';
 }

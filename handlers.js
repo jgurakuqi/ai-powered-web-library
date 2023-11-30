@@ -15,16 +15,31 @@ import {
  * @param {string} new_author 
  * @returns 
  */
-function check_book_duplicates(app_context, new_title, new_author) {
-    let is_valid = true;
+function check_book_duplicates(app_context, new_title, new_author, curr_book_id = null) {
+    console.log("ENTER: app_context.all_books: " + JSON.stringify(app_context.all_books));
 
-    app_context.all_books.forEach(book => {
-        if (compare_strings(book.Title, new_title) && compare_strings(book.Author, new_author)) {
-            is_valid = false;
+    for (const book of app_context.all_books) {
+        console.log("curr_book_id: ", curr_book_id, ", book.id: ", book.id);
+        console.log("curr_book_id: ", typeof curr_book_id, ", book.id: ", typeof book.id);
+        if (curr_book_id && curr_book_id === book.id) {
+            // Editing book
+            console.log("ENTER 1");
+            if (compare_strings(book.Title, new_title) && compare_strings(book.Author, new_author)) {
+                // Title and author are the same
+                console.log("ENTER 2");
+                return true;
+            }
+            // else: CHECK IF ANOTHER BOOKS EXISTS WITH SAME TITLE AND AUTHOR
+            console.log("ENTER 3");
         }
-    });
+        else if (compare_strings(book.Title, new_title) && compare_strings(book.Author, new_author)) {
+            console.log("ENTER 4");
+            return false
+        }
+    }
 
-    return is_valid;
+
+    return true;
 }
 
 
@@ -71,9 +86,7 @@ export function add_book_handler(app_context) {
  */
 export function edit_submit_handler(app_context) {
 
-
-
-    if (check_book_duplicates(app_context, edit_title.value, edit_author.value)) {
+    if (check_book_duplicates(app_context, edit_title.value, edit_author.value, parseInt(edited_book_id.value))) {
 
         const book = get_book_by_id(app_context.books, app_context.selected_book_id);
 
