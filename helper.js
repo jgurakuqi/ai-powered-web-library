@@ -232,59 +232,6 @@ export function open_reviews_modal(app_context, book_id) {
  * Display the reviews in the reviews modal.
  * @param {Array} reviews 
  */
-// function display_reviews(app_context, reviews) {
-//     const reviews_list = document.getElementById('reviews_list');
-//     const reviews_per_page = 2; // Set the number of reviews to display per page
-//     const total_pages = Math.ceil(reviews.length / reviews_per_page);
-
-//     // Clear existing reviews in the modal
-//     reviews_list.innerHTML = '';
-
-//     if (app_context.current_page === null) {
-//         app_context.current_page = 1;
-//     }
-
-//     // Get the current page number from the app context
-//     const current_page = app_context.current_page;
-
-//     // Calculate the start and end index for the current page
-//     const start_index = (current_page - 1) * reviews_per_page;
-//     const endIndex = start_index + reviews_per_page;
-
-//     // Display reviews for the current page
-//     const reviews_to_show = reviews.slice(start_index, endIndex);
-
-//     reviews_to_show.forEach(review => {
-//         const review_item = document.createElement('div');
-//         review_item.classList.add('review-item'); // Add a class for styling
-
-//         const contentWrapper = document.createElement('div');
-//         contentWrapper.classList.add('content-wrapper'); // Add a class for styling
-
-//         contentWrapper.innerHTML = `
-//             <div class="review-card">
-//                 <p><strong>Title:</strong> ${review.Title}</p>
-//                 <p><strong>Description:</strong> ${review.Description}</p>
-//                 <p><strong>Rating:</strong> ${create_star_rating(review.Rating)}</p>
-//             </div>
-//         `;
-
-//         // Add a delete button for each review
-//         const delete_button = create_button('<i class="fas fa-trash-alt"></i>',
-//             'delete-button',
-//             () => delete_review_handler(app_context, review.id)
-//         );
-
-//         review_item.appendChild(contentWrapper);
-//         review_item.appendChild(delete_button);
-
-//         reviews_list.appendChild(review_item);
-//     });
-
-//     // Display pagination controls
-//     display_pagination_controls(app_context, total_pages);
-// }
-
 function display_reviews(app_context, reviews) {
     const reviews_list = document.getElementById('reviews_list');
     const reviews_per_page = 2; // Set the number of reviews to display per page
