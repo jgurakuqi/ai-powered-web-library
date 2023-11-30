@@ -141,3 +141,25 @@ footer .footer span a:hover {
 .edit-button:hover {
     background-color: #0056b3;
 }
+
+
+
+/* Add a new class for the full-width textarea */
+.full-width {
+    grid-column: span 2;
+    /* Span the entire third column */
+}
+
+/* Add styles for the Edit button */
+.form-group-edit {
+    grid-column: span 2;
+    /* Span the entire fourth column */
+}
+
+
+/* Additional styles for better appearance (adjust as needed) */
+form {
+    max-width: 600px;
+    /* Adjust as needed */
+    margin: 0 auto;
+}
