@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockpile Bookstore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="splash-screen">
+        <div class="loader"></div>
+        <p style="margin: 20px; font-size: 28px !important;">Loading...</p>
+    </div>
+
+    <div class="parallax">
+        <h1 class="welcome-message">Welcome to the Stockpile Bookstore</h1>
+        <div class="parallax-buttons-container">
+            <a href="#books_list_section" class="parallax-button">View Book List</a>
+            <a href="#add_book_section" class="parallax-button">Add a New Book</a>
+        </div>
+    </div>
+
+
+    <!-- Table for displaying all books -->
+    <section id="books_list_section">
+        <div class="card">
+            <h2>Book List</h2>
+            <!-- Search bar -->
+            <div class="search-container">
+                <input type="text" id="search_bar" placeholder="Search...">
+            </div>
+            <table id="books_list">
+                <thead>
+                    <tr>
+                        <th class="sortable">Title</th>
+                        <th class="sortable">Author</th>
+                        <th class="sortable">Price in Euros</th>
+                        <th class="sortable">Year</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Reviews</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Insert here the elements -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="add_book_section">
+        <div class="card">
+            <h2>Add a New Book</h2>
+            <form id="add_book_form" action="http://192.168.1.177:3000/bookstore" method="POST" class="grid-form">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required class="medium-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required class="medium-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price in Euros:</label>
+                    <input type="number" id="price" name="price" step="0.01" min="0.01" max="1000" min="0.01" max="1000"
+                        required class="small-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" min="0" max="2023" id="year" name="year" required class="small-input">
+                </div>
+
+                <div class="form-group-submit">
+                    <input type="submit" value="Add Book" id="add_book_submit">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Modal for editing book details -->
+    <div id="edit_book_modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="visible">
+                <h2>Edit Book</h2>
+                <form id="edit_book_form">
+                    <label for="edit_title">Title:</label>
+                    <input type="text" id="edit_title" name="edit_title" required><br>
+
+                    <label for="edit_author">Author:</label>
+                    <input type="text" id="edit_author" name="edit_author" required><br>
+
+                    <label for="edit_price">Price:</label>
+                    <input type="number" id="edit_price" name="edit_price" step="0.01" min="0.01" max="1000"
+                        required><br>
+
+                    <label for="edit_year">Year:</label>
+                    <input type="number" min="0" max="2023" id="edit_year" name="edit_year" required><br>
+                    <input type="submit" value="Save Changes" id="edit_book_submit">
+                    <!-- class="edit_book_btn" -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for viewing and managing book reviews -->
+    <div id="reviews_modal" class="modal" style="display: none;">
+        <div class="review-modal-content">
+            <span class="close" id="close_reviews_modal">&times;</span>
+            <div id="existing_reviews_section" class="visible">
+                <h2>Reviews</h2>
+                <div id="ai_review_section">
+                    <p class="star-rating" id="ai-star-rating">
+                        Average AI-based Rating:
+                        <i class="fas fa-star ai-stars-review" id="ai-rating-1" data-rating="1"></i>
+                        <i class="far fa-star ai-stars-review" id="ai-rating-2" data-rating="2"></i>
+                        <i class="far fa-star ai-stars-review" id="ai-rating-3" data-rating="3"></i>
+                        <i class="far fa-star ai-stars-review" id="ai-rating-4" data-rating="4"></i>
+                        <i class="far fa-star ai-stars-review" id="ai-rating-5" data-rating="5"></i>
+                    </p>
+                </div>
+                <div id="reviews_list">
+                    <!-- Reviews will be dynamically inserted here -->
+                </div>
+
+                <div class="new-review-button-container">
+                    <button id="new_review" class="visible material-blue-button" style="margin: 20px;">
+                        Write new review
+                    </button>
+                </div>
+            </div>
+            <div id="new_review_section" class="hidden">
+
+                <div class="goback-container" style="display: inline-block;">
+                    <button id="go_back_button" class="goback-button">&larr;</button>
+                </div>
+                <h2 style="display: inline-block; margin-top: 10px; margin-left: 10px;">New Review</h2>
+                <!-- Update the form in the HTML for the add review section -->
+                <form id="add_review_form">
+                    <div class="form-group">
+                        <label for="review_title">Title:</label>
+                        <input type="text" id="review_title" name="review_title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review_description">Description:</label>
+                        <textarea id="review_description" name="review_description" maxlength="200" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review_rating">Rating:</label>
+                        <div class="star-rating" id="star-rating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" name="review_rating" id="hidden-rating" value="1">
+                    </div>
+
+                    <!-- New form group for the submit button in the add review section -->
+                    <div class="form-group-submit-review">
+                        <input type="submit" value="Add Review" id="add_review_submit">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="init.js" type="module"></script>
+
+    <footer>
+        <div class="footer">
+            <span>
+                &copy; 2023
+                Created By
+                <a href="jurgen.gurakuqi@gmail.com" target="_blank">
+                    Jurgen Gurakuqi
+                </a>
+            </span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
