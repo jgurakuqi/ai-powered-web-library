@@ -1,0 +1,82 @@
+[
+    {
+        "text": "A complete letdown. The characters were flat, and the plot was uninteresting. Very bad.",
+        "label": "very bad"
+    },
+    {
+        "text": "A mix of positive and negative elements. Some parts were enjoyable, but others were disappointing. Mixed.",
+        "label": "mixed"
+    },
+    {
+        "text": "The writing was lackluster, and the story failed to engage me. A slightly bad experience overall.",
+        "label": "slightly bad"
+    },
+    {
+        "text": "An absolute delight to read! The plot twists were unexpected, and the characters were well-developed. Very good indeed!",
+        "label": "very good"
+    },
+    {
+        "text": "Started off promising, but the plot became convoluted. A slightly bad experience overall.",
+        "label": "slightly bad"
+    },
+    {
+        "text": "This book is a masterpiece! The author's storytelling is unparalleled. A truly exceptional reading experience. Very good.",
+        "label": "very good"
+    },
+    {
+        "text": "Mixed feelings about this one. The characters were interesting, but the plot lacked coherence. Mixed.",
+        "label": "mixed"
+    },
+    {
+        "text": "Terrible from beginning to end. I can't find a single positive thing to say about this book. Very bad.",
+        "label": "very bad"
+    },
+    {
+        "text": "A slightly good read. The plot was engaging, but there were some flaws in the character development.",
+        "label": "slightly good"
+    },
+    {
+        "text": "A rollercoaster of emotions! The plot kept me hooked, and the characters were compelling. Very good indeed!",
+        "label": "very good"
+    },
+    {
+        "text": "The story had potential, but the execution was poor. A slightly bad experience for me.",
+        "label": "slightly bad"
+    },
+    {
+        "text": "An emotional journey with well-crafted characters. A very positive reading experience.",
+        "label": "very good"
+    },
+    {
+        "text": "A mix of highs and lows. Some parts were enjoyable, while others were disappointing. Mixed.",
+        "label": "mixed"
+    },
+    {
+        "text": "Absolutely loved it! A masterpiece in storytelling. A truly exceptional reading experience.",
+        "label": "very good"
+    },
+    {
+        "text": "The characters were poorly developed, and the plot was lackluster. A slightly bad read.",
+        "label": "slightly bad"
+    },
+    {
+        "text": "I was on the edge of my seat throughout. An incredibly satisfying and very positive experience.",
+        "label": "very good"
+    },
+    {
+        "text": "Not terrible, but definitely not great. A slightly bad experience overall.",
+        "label": "slightly bad"
+    },
+    {
+        "text": "A very bad book. I couldn't find any redeeming qualities in the plot or characters.",
+        "label": "very bad"
+    },
+    {
+        "text": "A bit confusing at times, but overall, a decent read. A mixed bag of emotions.",
+        "label": "mixed"
+    },
+    {
+        "text": "This book exceeded all my expectations. An outstanding and very positive reading experience.",
+        "label": "very good"
+    }
+]
