@@ -26,34 +26,34 @@
             <form id="add_book_form" class="grid-form">
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required class="medium-input">
+                    <input type="text" id="title" name="title" required disabled class="medium-input">
                 </div>
 
                 <div class="form-group">
                     <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" required class="medium-input">
+                    <input type="text" id="author" name="author" required disabled class="medium-input">
                 </div>
 
                 <div class="form-group">
                     <label for="price">Price in Euros:</label>
-                    <input type="number" id="price" name="price" step="0.01" min="0.01" max="1000" required
+                    <input type="number" id="price" name="price" step="0.01" min="0.01" max="1000" required disabled
                         class="small-input">
                 </div>
 
                 <div class="form-group">
                     <label for="year">Year:</label>
-                    <input type="number" min="0" max="2023" id="year" name="year" required class="small-input">
+                    <input type="number" min="0" max="2023" id="year" name="year" required disabled class="small-input">
                 </div>
 
                 <!-- Add a new form-group for the textarea input -->
-                <div class="form-group full-width">
+                <!-- <div class="form-group full-width">
                     <label for="description">Description:</label>
                     <textarea id="description" name="description" maxlength="200" required></textarea>
-                </div>
+                </div> -->
 
                 <!-- Edit button in the last column -->
                 <div class="form-group-edit">
-                    <button id="edit_book" class="edit-button">Edit book</button>
+                    <button id="edit_book" disabled class="edit-button">Edit book</button>
                 </div>
 
                 <!-- <div class="form-group-edit">
@@ -74,6 +74,9 @@
             </span>
         </div>
     </footer>
+
+    <script src="init.js" type="module"></script>
+
 </body>
 
 </html>

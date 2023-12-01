@@ -172,7 +172,7 @@ export function update_book_details(bookId, updatedDetails) {
     })
 }
 
-export function close_reviews_modal() {
+function close_reviews_modal() {
     document.getElementById('close_reviews_modal').click();
 }
 
@@ -206,7 +206,7 @@ function update_ai_review_stars(reviews) {
  * @param {object} app_context 
  * @param {number} book_id 
  */
-export function open_reviews_modal(app_context, book_id) {
+function open_reviews_modal(app_context, book_id) {
     const reviews_modal = document.getElementById('reviews_modal');
     const close_reviews_modal = document.getElementById('close_reviews_modal');
 

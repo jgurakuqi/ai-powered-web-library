@@ -1,5 +1,5 @@
 import { add_book_handler, edit_submit_handler, sort_table } from './handlers.js';
-import { fetch_books, add_review_handler, close_reviews_modal, open_reviews_modal } from './helper.js';
+import { fetch_books, add_review_handler } from './helper.js';
 
 /**
  * Initialize all the basic handlers and retrieve the context data.

@@ -135,6 +135,42 @@ app.get('/books', (req, res) => {
     });
 });
 
+// app.use((req, res, next) => {
+//     console.log('Received request:', req.method, req.url);
+//     next();
+// });
+
+// CRUD GET to retrieve book details by ID
+app.get('/books/:id', (req, res) => {
+    const bookId = req.params.id;
+
+    console.log("RETRIEVED BOOK: " + bookId);
+
+
+    // Query the database to retrieve book details by ID
+    const query = 'SELECT Title, Author, Price, Year FROM books WHERE id = ?';
+
+    connection_pool.getConnection((err, connection) => {
+        if (err) {
+            throw err;
+        }
+
+        connection.query(query, [bookId], (error, results, fields) => {
+            connection.release();
+            if (error) {
+                console.error('Error fetching book details:', error.message);
+                return res.status(500).json({ error: 'Internal Server Error' });
+            }
+
+            if (results.length === 0) {
+                return res.status(404).json({ error: 'Book not found' });
+            }
+
+            const bookDetails = results[0];
+            return res.status(200).json(bookDetails);
+        });
+    });
+});
 
 // CRUD DELETE for books.
 app.delete('/books/:id', (req, res) => {
