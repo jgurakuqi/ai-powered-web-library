@@ -1,5 +1,5 @@
 # ai-powered-web-library
-The goal here is to develop a simple mock web app book library for demonstrating a possible use of AI for aiding users.
+The goal here is to develop a simple mock web app book library for demonstrating a possible use of AI for aiding users. Currently the app is very minimal in terms of functionality, but the goal is to keep expanding it, including even more AI-based features to test their capabilities and integrability in such kind of application.
 
 
 ## Table of Contents
