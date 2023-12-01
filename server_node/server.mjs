@@ -15,6 +15,7 @@ const app = express();
 const PORT = 3000
 const HOST = '0.0.0.0'; // This allows external access
 
+
 app.use(cors());
 app.use(express.json());
 
