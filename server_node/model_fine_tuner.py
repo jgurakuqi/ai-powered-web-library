@@ -1,99 +1,3 @@
-# import torch
-# import json
-# from transformers import BertTokenizer
-
-
-# # Load data from JSON file
-# with open("dataset.json", "r", encoding="utf-8") as file:
-#     data = json.load(file)
-
-# # Extract texts and labels
-# texts = [entry["text"] for entry in data]
-# labels = [entry["label"] for entry in data]
-
-
-# # Load BERT tokenizer
-# tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-
-# # Tokenize input texts
-# tokenized_inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt")
-
-# # Convert labels to numerical values (you may need to customize this based on your specific labels)
-# label_dict = {
-#     "very bad": 0,
-#     "slightly bad": 1,
-#     "mixed": 2,
-#     "slightly good": 3,
-#     "very good": 4,
-# }
-# numeric_labels = [label_dict[label] for label in labels]
-
-# # Prepare PyTorch Dataset
-# from torch.utils.data import TensorDataset
-
-# dataset = TensorDataset(
-#     tokenized_inputs["input_ids"],
-#     tokenized_inputs["attention_mask"],
-#     torch.tensor(numeric_labels),
-# )
-
-
-# # FINE TUNE:
-
-
-# from torch.utils.data import DataLoader
-# from transformers import BertForSequenceClassification, AdamW
-
-# # Load pre-trained BERT model
-# model = BertForSequenceClassification.from_pretrained(
-#     "bert-base-uncased", num_labels=len(label_dict)
-# )
-
-# # Create DataLoader
-# train_dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
-
-# # Set up optimizer and scheduler
-# optimizer = AdamW(model.parameters(), lr=5e-5)
-# num_epochs = 3
-
-# # Training loop
-# for epoch in range(num_epochs):
-#     for batch in train_dataloader:
-#         optimizer.zero_grad()
-#         inputs = batch[:-1]  # Exclude labels
-#         labels = batch[-1]
-
-#         outputs = model(*inputs, labels=labels)
-#         loss = outputs.loss
-#         loss.backward()
-#         optimizer.step()
-
-# # Save the fine-tuned model
-# model.save_pretrained("fine_tuned_bert_model")
-
-
-# # INFERENCE:
-
-# from transformers import BertForSequenceClassification
-
-# # Load fine-tuned model
-# fine_tuned_model = BertForSequenceClassification.from_pretrained(
-#     "fine_tuned_bert_model"
-# )
-
-# # Tokenize input for inference
-# inference_text = "Your text for inference."
-# tokenized_input = tokenizer(inference_text, return_tensors="pt")
-
-# # Run inference
-# with torch.no_grad():
-#     outputs = fine_tuned_model(**tokenized_input)
-
-# # Access logits or probabilities
-# logits = outputs.logits
-# probabilities = logits.softmax(dim=1)
-
-
 import torch
 import json
 from transformers import BertTokenizer, BertForSequenceClassification, AdamW
@@ -136,7 +40,6 @@ dataset = TensorDataset(
 # Load pre-trained BERT model
 import os
 
-# ...
 
 # Load pre-trained BERT model or fine-tuned model if it already exists
 model_path = "fine_tuned_bert_model"
