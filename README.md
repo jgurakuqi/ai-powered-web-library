@@ -67,6 +67,7 @@ Many improvements are possible:
 - Introduce purchasable books.
 - Introduce genre category for the books.
 - Introduce an AI Chatbot, which according to your history and preferences can advice to you some new books to buy.
+- Fix and/or improve the CSS styles. Currently the styles.css file for the book/index.html contain redundant and conflicting styling code, so a first task could be to refactor that file.
 
 
 ## License
