@@ -15,7 +15,6 @@ const app = express();
 const PORT = 3000
 const HOST = '0.0.0.0'; // This allows external access
 
-
 app.use(cors());
 app.use(express.json());
 
@@ -144,7 +143,9 @@ app.get('/books', (req, res) => {
 // CRUD GET to retrieve book details by ID
 app.get('/books/:id', (req, res) => {
     const bookId = req.params.id;
-    // console.log("RETRIEVED BOOK: " + bookId);
+
+    console.log("RETRIEVED BOOK: " + bookId);
+
 
     // Query the database to retrieve book details by ID
     const query = 'SELECT Title, Author, Price, Year FROM books WHERE id = ?';
