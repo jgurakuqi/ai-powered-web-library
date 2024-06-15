@@ -1,6 +1,8 @@
 # ai-powered-web-library :rocket:
 The goal here is to develop a simple mock web app book library for demonstrating a possible use of AI for aiding users. Currently the app is very minimal in terms of functionality, but the goal is to keep expanding it, including even more AI-based features to test their capabilities and integrability in such kind of application.
 
+The currently included AI feature consists in a BERT classifier which will parse the books' reviews to determine the real review expressed by the user. This can turn really useful, as we have seen many times, in famous e-commerce shops, as people tend to give too much or too few stars with respect to their written review. This feature can normalise the single review by providing an amount of stars that matches the text content of the review, which then will be averaged with every AI-review, providing more reliable average reviews of a product.
+
 
 ## Table of Contents
 
